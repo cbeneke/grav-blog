@@ -1,0 +1,18 @@
+enabled: true
+folders:
+  - pages
+  - themes
+repository: 'https://git.example.org/jdoe/blog'
+user: git
+password: gitsync-defPASSWORDHASH
+webhook: /_git-sync
+branch: master
+remote:
+  name: origin
+  branch: master
+git:
+  author: gituser
+  name: GitSync
+  email: j.doe@example.org
+  bin: git
+logging: false

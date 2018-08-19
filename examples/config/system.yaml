@@ -1,0 +1,3 @@
+# Your used theme. Will be synced via git-sync
+pages:
+  theme: clean-blog
