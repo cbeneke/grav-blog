@@ -1,6 +1,6 @@
 FROM alpine
 LABEL Maintainer="Christian Beneke <c.beneke@wirelab.org>" \
-      Description="Lightweight container for Grav based on alpine linux"
+      Description="Container for a Grav-blog based on alpine linux"
 
 RUN apk --no-cache add git nginx php7 php7-fpm php7-ctype php7-curl php7-dom \
       php7-gd php7-json php7-ldap php7-mbstring php7-openssl php7-session \
@@ -23,11 +23,12 @@ RUN wget https://github.com/getgrav/grav/releases/download/${GRAV_VERSION}/grav-
     git config user.author gitsync && \
     git config user.email changeme@example.org
 
-COPY config/gitignore /app/user/.gitignore
-COPY config/nginx.conf /etc/nginx/nginx.conf
-COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-COPY config/fpm-pool.conf /etc/php7/php-fpm.d/www.conf
-COPY config/php.ini /etc/php7/conf.d/99-custom.ini
+COPY files/gitignore        /app/user/.gitignore
+COPY files/account.yaml     /app/user/account/invalid.yaml
+COPY files/nginx.conf       /etc/nginx/nginx.conf
+COPY files/fpm-pool.conf    /etc/php7/php-fpm.d/www.conf
+COPY files/php.ini          /etc/php7/conf.d/99-custom.ini
+COPY files/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 RUN chown -R nginx:nginx /app
 
