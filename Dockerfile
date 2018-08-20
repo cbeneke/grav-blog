@@ -24,7 +24,7 @@ RUN wget https://github.com/getgrav/grav/releases/download/${GRAV_VERSION}/grav-
     git config user.email changeme@example.org
 
 COPY files/gitignore        /app/user/.gitignore
-COPY files/account.yaml     /app/user/account/invalid.yaml
+COPY files/account.yaml     /app/user/accounts/invalid.yaml
 COPY files/nginx.conf       /etc/nginx/nginx.conf
 COPY files/fpm-pool.conf    /etc/php7/php-fpm.d/www.conf
 COPY files/php.ini          /etc/php7/conf.d/99-custom.ini
