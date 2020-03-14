@@ -15,7 +15,7 @@ RUN wget https://github.com/getgrav/grav/releases/download/${GRAV_VERSION}/grav-
     mv grav-admin/* grav-admin/.htaccess . && \
     bin/gpm install -f -y admin auto-author auto-date cookieconsent feed \
       login-ldap minify-html readingtime && \
-    bin/gpm direct-install -f -y https://getgrav.org/download/plugins/git-sync/2.0.5 && \
+    bin/gpm direct-install -y https://getgrav.org/download/plugins/git-sync/2.0.5 && \
     rm -rf grav-admin-v${GRAV_VERSION}.zip grav-admin user/themes user/pages \
       user/config/* && \
     cd user && \
