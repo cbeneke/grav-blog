@@ -9,7 +9,7 @@ RUN apk --no-cache add git nginx openssh-client php7 php7-fpm php7-ctype \
     mkdir -p /app && chown nginx:nginx /app
 
 WORKDIR /app
-ENV GRAV_VERSION='1.6.17'
+ENV GRAV_VERSION='1.6.22'
 RUN wget https://github.com/getgrav/grav/releases/download/${GRAV_VERSION}/grav-admin-v${GRAV_VERSION}.zip && \
     unzip grav-admin-v${GRAV_VERSION}.zip && \
     mv grav-admin/* grav-admin/.htaccess . && \
